@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# download weights
+# https://github.com/ZYangChen/MoCha-Stereo/releases
 
 python3 demo.py \
 	--left_imgs '/mnt/Data2/depth/depth20250102/left2/*.png' \
