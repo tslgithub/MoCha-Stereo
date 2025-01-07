@@ -332,14 +332,14 @@ class Feature(SubModule):
         super(Feature, self).__init__()
         pretrained = True
         # efficientnetv2_l   91.5M 91557602
-        config = {'url': '', 'file': './config/tf_efficientnetv2_l-d664b728.pth', 'input_size': (3, 384, 384),
-                  'pool_size': (12, 12), 'interpolation': 'bicubic', 'mean': (0.5, 0.5, 0.5),
-                  'std': (0.5, 0.5, 0.5), 'first_conv': 'conv_stem', 'test_input_size': (3, 480, 480),
-                  'architecture': 'tf_efficientnetv2_l'}
+        # config = {'url': '', 'file': './config/tf_efficientnetv2_l-d664b728.pth', 'input_size': (3, 384, 384),
+        #           'pool_size': (12, 12), 'interpolation': 'bicubic', 'mean': (0.5, 0.5, 0.5),
+        #           'std': (0.5, 0.5, 0.5), 'first_conv': 'conv_stem', 'test_input_size': (3, 480, 480),
+        #           'architecture': 'tf_efficientnetv2_l'}
         model = timm.create_model('tf_efficientnetv2_l',
                                   pretrained=pretrained,
-                                  features_only=True,
-                                  pretrained_cfg=config)
+                                  features_only=True,)
+                                  # pretrained_cfg=config)
         chans = [32, 64, 96, 224, 384]
         layers = [1,2,3,5,6]
         self.conv_stem = model.conv_stem
