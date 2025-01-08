@@ -84,9 +84,6 @@ def demo(args):
             cv2.waitKey(1)
 
 
-
-
-
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--restore_ckpt', help="restore checkpoint", default='./weights/mocha-stereo.pth')
